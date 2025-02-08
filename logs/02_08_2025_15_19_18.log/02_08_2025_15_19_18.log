@@ -1,0 +1,6 @@
+[2025-02-08 15:19:24,820] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-02-08 15:19:24,825] 107 dagshub - INFO - Accessing as rohanp04
+[2025-02-08 15:19:25,454] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rohanp04/Network_ETS "HTTP/1.1 200 OK"
+[2025-02-08 15:19:26,016] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-02-08 15:19:26,019] 107 dagshub - INFO - Initialized MLflow to track repo "rohanp04/Network_ETS"
+[2025-02-08 15:19:26,020] 107 dagshub - INFO - Repository rohanp04/Network_ETS initialized!
