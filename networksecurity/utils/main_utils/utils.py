@@ -5,6 +5,8 @@ import os,sys
 import dill
 import yaml
 import pickle
+from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 def read_yaml_file(file_path: str) -> dict:
     try:
@@ -40,5 +42,49 @@ def save_object(file_path: str, obj: object) -> None:
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
         logging.info("Exited the save_object method action is completed")
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+    
+def load_object(file_path: str) -> object:
+    try:
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"File {file_path} does not exist")
+        with open(file_path, "rb") as file_obj:
+            print(file_obj)
+            return pickle.load(file_obj)
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+    
+def load_numpy_array_data(file_path: str) -> np.array:
+    try:
+        with open(file_path, "rb") as file_obj:
+            return np.load(file_obj)
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+    
+
+def evaluate_models(x_train, y_train, x_test, y_test, models, params):
+    try:
+        report = {}
+
+        for i in range(len(list(models))):
+            model = list(models.values())[i]
+            param = params[list(models.keys())[i]]
+            
+            gs = GridSearchCV(model, param, cv=3)
+            gs.fit(x_train, y_train)
+
+            model.set_params(**gs.best_params_)
+            model.fit(x_train, y_train)
+
+            y_test_pred = model.predict(x_test)
+            y_train_pred = model.predict(x_train)
+
+            train_model_score = r2_score(y_train, y_train_pred)
+            test_model_score = r2_score(y_test, y_test_pred)
+
+            report[list(models.keys())[i]] = test_model_score
+
+        return report
     except Exception as e:
         raise NetworkSecurityException(e, sys)
