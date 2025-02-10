@@ -1,0 +1,30 @@
+[2025-02-10 20:05:06,772] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-02-10 20:05:06,818] 107 dagshub - INFO - Accessing as rohanp04
+[2025-02-10 20:05:07,631] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rohanp04/Network_ETS "HTTP/1.1 200 OK"
+[2025-02-10 20:05:08,359] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2025-02-10 20:05:08,362] 107 dagshub - INFO - Initialized MLflow to track repo "rohanp04/Network_ETS"
+[2025-02-10 20:05:08,363] 107 dagshub - INFO - Repository rohanp04/Network_ETS initialized!
+[2025-02-10 20:05:24,664] 64 root - INFO - Performed train test split on the dataframe
+[2025-02-10 20:05:24,664] 66 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2025-02-10 20:05:24,665] 74 root - INFO - Making train, test directory and exporting the data
+[2025-02-10 20:05:24,727] 80 root - INFO - Exported train and test file path
+[2025-02-10 20:05:24,728] 43 root - INFO - Initiate the data Ingesttion
+[2025-02-10 20:05:24,728] 44 root - INFO - Data Ingestion completed and Artifact: DataIngestionArtifact(trained_file_path='Artifacts\\02_10_2025_Feb_04_28\\data_ingestion\\ingested\\train.csv', test_file_path='Artifacts\\02_10_2025_Feb_04_28\\data_ingestion\\ingested\\test.csv')
+[2025-02-10 20:05:24,811] 31 root - INFO - Required no of columns: 31
+[2025-02-10 20:05:24,812] 32 root - INFO - Data frame has columns: 31
+[2025-02-10 20:05:24,812] 31 root - INFO - Required no of columns: 31
+[2025-02-10 20:05:24,812] 32 root - INFO - Data frame has columns: 31
+[2025-02-10 20:05:24,992] 56 root - INFO - Initiate the data validation
+[2025-02-10 20:05:24,992] 57 root - INFO - Data validation completed and Artifact: DataValidationArtifact(validation_status=None, valid_train_file_path='Artifacts\\02_10_2025_Feb_04_28\\data_ingestion\\ingested\\train.csv', valid_test_file_path='Artifacts\\02_10_2025_Feb_04_28\\data_ingestion\\ingested\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts\\02_10_2025_Feb_04_28\\data_validation\\drift_report\\report.yaml')
+[2025-02-10 20:05:24,992] 59 root - INFO - Initiating data transformation from the method initiate_data_transformation
+[2025-02-10 20:05:25,014] 49 root - INFO - Entered the KNNImputer method for data transformation
+[2025-02-10 20:05:25,014] 52 root - INFO - Initialised KNNImoter with the params : {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2025-02-10 20:05:25,024] 40 root - INFO - Entered the save_object method of Main Utils directory
+[2025-02-10 20:05:25,026] 44 root - INFO - Exited the save_object method action is completed
+[2025-02-10 20:05:25,026] 40 root - INFO - Entered the save_object method of Main Utils directory
+[2025-02-10 20:05:25,027] 44 root - INFO - Exited the save_object method action is completed
+[2025-02-10 20:12:24,753] 40 root - INFO - Entered the save_object method of Main Utils directory
+[2025-02-10 20:12:24,754] 44 root - INFO - Exited the save_object method action is completed
+[2025-02-10 20:12:24,754] 40 root - INFO - Entered the save_object method of Main Utils directory
+[2025-02-10 20:12:24,783] 44 root - INFO - Exited the save_object method action is completed
+[2025-02-10 20:12:24,783] 118 root - INFO - model trainer artifact data is as follows: ModelTrainerArtifact(trained_model_file_path='Artifacts\\02_10_2025_Feb_04_28\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9909708836359947, precision_score=0.9892647356694348, recall_score=0.9926829268292683), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9783653846153846, precision_score=0.9698173153296267, recall_score=0.9870654810024252))
